@@ -2,11 +2,18 @@ import './App.css';
 import Header from './Header';
 import Footer from './Footer';
 import { useState } from 'react';
+import anfto from './assets/anfto.jpg';
+import mafto from './assets/mafto.jpeg';
+import frfto from './assets/frfto.jpg';
+import kefto from './assets/kefto.jpg';
+import dafto from './assets/dafto.jpg';
+import carrito from './assets/minimalist-shopping-cart-icon-on-a-transparent-background-perfect-for-illustrating-ecommerce-retail-or-online-shopping-concepts-png-382940380.png';
+import logo from './assets/Toki-nw-logo.svg';
+import proto from './assets/proto.png';
 
 function Main_Index() {
   return (
     <>
-    <Header />
       <main>
         <div className="prin">
           <div className="titulos">
@@ -44,7 +51,7 @@ function Main_Us() {
             <h4>Somos un grupo conformado por 5 estudiantes de 6to año de la escuela secundaria E.S.E.T.P. 724, de lo cual los integrantes son:</h4>
         </div>
         <div class="cara-grupo">
-            <img src="assets/anfto.jpg" alt="Fto de Angie"></img>
+            <img src={anfto} alt="Fto de Angie" />
             <h3>Angelina Mastrota Riviere</h3>
             <p>Cumple dentro del equipo la funcion de lider con los roles de Belbin:</p>
             <ul>
@@ -53,7 +60,7 @@ function Main_Us() {
             </ul>
         </div>
         <div class="cara-grupo">
-            <img src="assets/mafto.jpeg" alt="Fto de Mariano"></img>
+            <img src={mafto} alt="Fto de Mariano" />
             <h3>Mariano Amir Lapeire Bellini</h3>
             <p>Cumple la funcion de desarrollaror y programador con los roles de Belbin:</p>
             <ul>
@@ -62,7 +69,7 @@ function Main_Us() {
             </ul>
         </div>
          <div class="cara-grupo">
-             <img src="assets/frfto.jpg" alt="Fto de Francisco"></img>
+             <img src={frfto} alt="Fto de Francisco" />
              <h3>Francisco Andres Jimenez</h3>
              <p>Cumple con el rol de tecnico y robotico con los roles de Belbin:</p>
              <ul>
@@ -70,7 +77,7 @@ function Main_Us() {
               </ul>
          </div>
          <div class="cara-grupo">
-             <img src="assets/kefto.jpg" alt="Fto de Keanu"></img>
+             <img src={kefto} alt="Fto de Keanu" />
              <h3>Keanu Steven Elisaincin</h3>
              <p>Cumple como diseñador y encargado de markething con los roles de Belbin:</p>
              <ul>
@@ -79,7 +86,7 @@ function Main_Us() {
              </ul>
           </div>
          <div class="cara-grupo">
-             <img src="assets/dafto.jpg" alt="Fto de Dago"></img>
+             <img src={dafto} alt="Fto de Dago" />
               <h3>Dago Luka Gimenez</h3>
              <p>Cumple como comunicador y encargado de teseroria con los roles de Belbin:</p>
               <ul>
@@ -99,7 +106,7 @@ function Main_Comprar() {
         <div class="compras-front">
             <h1>¿Como conseguir nuestro producto?</h1>
             <h2>Para conseguir nuestro producto, es a traves del contacto directo con algun miembro del proyecto de manera directa o mediante la red social de Toki</h2>
-            <img src="assets/minimalist-shopping-cart-icon-on-a-transparent-background-perfect-for-illustrating-ecommerce-retail-or-online-shopping-concepts-png-382940380.png" alt="Compras" ></img>
+            <img src={carrito} alt="Compras" />
         </div>
         <Footer/>
     </>
@@ -126,15 +133,38 @@ function Main_Proyecto() {
   )
 }
 
+function Content() {
+  const [cont, setCont] = useState(1); // 1 = Inicio por defecto
 
+  return (
+    <div>
+      <div className="navegador">
+        <button className="btn-imagen" onClick={() => setCont(1)}>
+          <img src={logo} alt="Toki - Inicio" />
+        </button>
+        <button onClick={() => setCont(2)}>Sobre nosotros</button>
+        <button onClick={() => setCont(3)}>Sobre nuestro proyecto</button>
+        <button className="btn-imagen" onClick={() => setCont(4)}>
+          <img src={carrito} alt="Comprar producto" style={{ height: "80px", width: "100px" }} />
+        </button>
+      </div>
 
+      <div className="cuerpo">
+        {cont === 1 && <Main_Index />}
+        {cont === 2 && <Main_Us />}
+        {cont === 3 && <Main_Proyecto />}
+        {cont === 4 && <Main_Comprar />}
+      </div>
+    </div>
+  );
+}
 
 
 
 function App() {
   return (
     <>
-    <Main_Index/>
+     <Content />
     </>
   );
 }
