@@ -117,16 +117,18 @@ function Main_Proyecto() {
   return(
     <>
         <div class="toki-presentacion">
-        <h2>¿Que es TOKI?</h2>
-        <center><p>Por 5 M.U.D</p></center>
-        <img src="img/Toki-nw-logo.svg" alt="Toki logo"></img>
+        <div className='toki-presentacion'>
+          <h2>¿Que es TOKI?</h2>
+          <p>Por 5 M.U.D</p>
+          <img src={logo} alt="Toki logo" style={{ width: "200px", height: "auto" }} />
+        </div>
         </div>
         <div class="toki-presentacion">
             <h4>
                 TOKI es un proyecto escolar grupal de la Secundaria 724 "Presidente de la Nación Arturo Umberto Illía", que busca crear un dispositivo de inclusión para personas con dificultades del habla o que padecen algún trastorno del espectro autista, y que necesiten comunicarse dentro de un ambiente determinado únicamente con su adulto de confianza. Además, desarrollamos una aplicación que vincula el teléfono del adulto con el dispositivo del usuario, para que las alertas lleguen directamente a su celular y se lleve un registro de las interacciones, con el objetivo de mejorar la experiencia y adaptarla a las necesidades de cada persona. 
             </h4>
             <h4>A continuacion una imagen del prototipo</h4>
-            <img src="Img/proto.png" alt="ja" width="250px"></img>
+            <img src={proto} width="250px"></img>
         </div>
         <Footer/>
     </>
@@ -134,7 +136,7 @@ function Main_Proyecto() {
 }
 
 function Content() {
-  const [cont, setCont] = useState(1); // 1 = Inicio por defecto
+  const [cont, setCont] = useState(1); //salvenme
 
   return (
     <div>
@@ -145,7 +147,7 @@ function Content() {
         <button onClick={() => setCont(2)}>Sobre nosotros</button>
         <button onClick={() => setCont(3)}>Sobre nuestro proyecto</button>
         <button className="btn-imagen" onClick={() => setCont(4)}>
-          <img src={carrito} alt="Comprar producto" style={{ height: "80px", width: "100px" }} />
+          <img src={carrito} alt="Comprar producto" style={{ height: "80px", width: "80px" }} />
         </button>
       </div>
 

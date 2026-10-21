@@ -71,11 +71,15 @@ main {
     display: block;
     padding: 0in 0in 4rem 0in;
 }
-main .cara-cabecera {
-    text-align: center;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+.toki-presentacion {
+  text-align: center;
 }
-main .cara-grupo {
+
+.toki-presentacion img {
+  display: block;
+  margin: 0 auto;
+}
+.cara-grupo {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -84,6 +88,10 @@ main .cara-grupo {
     padding-bottom: 3rem;
     border: #ccc solid 2cap ;
     
+}
+main .cara-toki {
+    align-items: center;
+    text-align: center;
 }
 main .cara-grupo img {
     width: 50%;
