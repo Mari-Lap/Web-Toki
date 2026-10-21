@@ -4,6 +4,7 @@
 
 /* Hoy 25/09/2026 reconozco y admito que debi haber hecho una documentacion la cual actualmente es inexistente, jaja, suerte leyendo esto*/ 
 
+/* Finalmente si hay una documentacion vaga que detalla varios avances y pensamientos 10/21/2026 14:44 */
 body {
     margin: 0;
     color: #222;
@@ -105,7 +106,7 @@ main .prin {
     padding-bottom: 5em;
     padding-left: 1em;
     background-color: #f4f1ea;
-    background-image: url("/Img/escola.jpg");
+    background-image: url("assets/escola.jpg");
     background-size: cover;
     background-position: 50% 50%;
 }
