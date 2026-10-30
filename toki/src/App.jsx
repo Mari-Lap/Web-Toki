@@ -135,13 +135,52 @@ function Main_Proyecto() {
   )
 }
 
+function Content() {
+  const [cont, setCont] = useState(1); //salvenme
+  const [abierto, setAbierto] = useState(false);
+  const irA = (numero) => {
+    setCont(numero);
+    setAbierto(false);
+  };
+
+
+  return (
+    <div>
+      <div className="navegador">
+        <button
+          className={`menu-hamburguesa ${abierto ? "activo" : ""}`}
+          onClick={() => setAbierto(!abierto)}
+          aria-label="Abrir menú"
+          aria-expanded={abierto}
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <div className={`menu-enlaces ${abierto ? "abierto" : ""}`}>
+          <button onClick={() => irA(1)}>Inicio</button>
+          <button onClick={() => irA(2)}>Sobre nosotros</button>
+          <button onClick={() => irA(3)}>Sobre nuestro proyecto</button>
+          <button onClick={() => irA(4)}>Como comprar</button>
+        </div>
+      </div>
+      <div className="cuerpo">
+        {cont === 1 && <Main_Index />}
+        {cont === 2 && <Main_Us />}
+        {cont === 3 && <Main_Proyecto />}
+        {cont === 4 && <Main_Comprar />}
+      </div>
+    </div>
+  );
+}
 
 
 
 function App() {
   return (
     <>
-     <Header />
+     <Content />
     </>
   );
 }
